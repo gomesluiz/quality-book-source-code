@@ -7,20 +7,20 @@ package capitulo11.com.refatoracao;
  *
  */
 public enum CategoriaDoUsuario {
-	/**
-	 * Funcionario da instituição
-	 */
-	FUNCIONARIO, 
-	/**
-	 * Aluno de graduação.
-	 */
-	GRADUANDO, 
-	/**
-	 * Aluno de mestrado.
-	 */
-	MESTRANDO, 
-	/**
-	 * Aluno de doutorado.
-	 */
-	DOUTORANDO;
+  /**
+   * Funcionario da instituição
+   */
+  FUNCIONARIO,
+  /**
+   * Aluno de graduação.
+   */
+  GRADUANDO,
+  /**
+   * Aluno de mestrado.
+   */
+  MESTRANDO,
+  /**
+   * Aluno de doutorado.
+   */
+  DOUTORANDO;
 }
