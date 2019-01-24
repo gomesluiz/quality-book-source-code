@@ -3,54 +3,54 @@ package capitulo11.com.refatoracao;
 import java.time.LocalDate;
 
 public class Emprestimo {
-	private String codigo;
-	private Usuario usuario;
-	private LocalDate dataDoEmprestimo;
-	private LocalDate dataDeDevolucao;
+  private String codigo;
+  private Usuario usuario;
+  private LocalDate dataDoEmprestimo;
+  private LocalDate dataDeDevolucao;
 
-	public Emprestimo(String codigo, Usuario usuario) {
-		this.codigo = codigo;
-		this.usuario = usuario;
-		this.dataDoEmprestimo = LocalDate.now();
+  public Emprestimo(String codigo, Usuario usuario) {
+    this.codigo = codigo;
+    this.usuario = usuario;
+    this.dataDoEmprestimo = LocalDate.now();
 
-		switch (usuario.getCategoria()) {
-		case FUNCIONARIO:
-		case GRADUANDO:
-			this.dataDeDevolucao = this.dataDoEmprestimo.plusDays(7);
-			break;
-		case MESTRANDO:
-			this.dataDeDevolucao = this.dataDoEmprestimo.plusDays(14);
-			break;
-		case DOUTORANDO:
-			this.dataDeDevolucao = this.dataDoEmprestimo.plusDays(21);
-		default:
-			break;
-		}
-	}
+    switch (usuario.getCategoria()) {
+    case FUNCIONARIO:
+    case GRADUANDO:
+      this.dataDeDevolucao = this.dataDoEmprestimo.plusDays(7);
+      break;
+    case MESTRANDO:
+      this.dataDeDevolucao = this.dataDoEmprestimo.plusDays(14);
+      break;
+    case DOUTORANDO:
+      this.dataDeDevolucao = this.dataDoEmprestimo.plusDays(21);
+    default:
+      break;
+    }
+  }
 
-	public String getCodigo() {
-		return codigo;
-	}
+  public String getCodigo() {
+    return codigo;
+  }
 
-	public Usuario getUsuario() {
-		return usuario;
-	}
+  public Usuario getUsuario() {
+    return usuario;
+  }
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
+  public void setUsuario(Usuario usuario) {
+    this.usuario = usuario;
+  }
 
-	public LocalDate getDataDoEmprestimo() {
-		return dataDoEmprestimo;
-	}
+  public LocalDate getDataDoEmprestimo() {
+    return dataDoEmprestimo;
+  }
 
-	public LocalDate getDataDeDevolucao() {
-		return dataDeDevolucao;
-	}
+  public LocalDate getDataDeDevolucao() {
+    return dataDeDevolucao;
+  }
 
-	public String getNomeDoUsuario() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+  public String getNomeDoUsuario() {
+    // TODO Auto-generated method stub
+    return null;
+  }
 
 }

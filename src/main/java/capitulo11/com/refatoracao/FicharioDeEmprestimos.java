@@ -60,6 +60,5 @@ public class FicharioDeEmprestimos {
       }
     }
     throw new EmprestimoNaoEncontradoException();
-
   }
 }
