@@ -10,7 +10,8 @@ public class Exemplar {
 	private boolean estaEmprestado;
 	private boolean estaDanificado;
 
-	public Exemplar(int numero, String titulo, String autor, String isbn, String editora) {
+	public Exemplar(int numero, String titulo, String autor, String isbn
+					, String editora) {
 		this.setNumero(numero);
 		this.setTitulo(titulo);
 		this.setAutor(autor);
