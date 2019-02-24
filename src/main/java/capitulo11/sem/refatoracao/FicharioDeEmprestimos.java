@@ -5,9 +5,10 @@ import java.util.List;
 public class FicharioDeEmprestimos {
   private List<Emprestimo> emprestimos;
 
-  public String getNomeDoUsuario(String codigoDoEmprestimo) throws EmprestimoNaoEncontradoException {
+  public String getNomeDoUsuario(String codigoDoEmprestimo) 
+      throws EmprestimoNaoEncontradoException {
     Emprestimo encontrado = null;
-    for (Emprestimo emprestimo : emprestimos) {
+    for (Emprestimo emprestimo : this.emprestimos) {
       if (emprestimo.getCodigo().equals(codigoDoEmprestimo)) {
         encontrado = emprestimo;
       }
@@ -18,9 +19,10 @@ public class FicharioDeEmprestimos {
     return encontrado.getNomeDoUsuario();
   }
 
-  public void removeUmEmprestimo(String codigoDoEmprestimo) throws EmprestimoNaoEncontradoException {
+  public void removeUmEmprestimo(String codigoDoEmprestimo) 
+      throws EmprestimoNaoEncontradoException {
     Emprestimo encontrado = null;
-    for (Emprestimo emprestimo : emprestimos) {
+    for (Emprestimo emprestimo : this.emprestimos) {
       if (emprestimo.getCodigo().equals(codigoDoEmprestimo)) {
         encontrado = emprestimo;
       }
@@ -28,7 +30,7 @@ public class FicharioDeEmprestimos {
     if (encontrado == null) {
       throw new EmprestimoNaoEncontradoException();
     }
-    emprestimos.remove(encontrado);
+    this.emprestimos.remove(encontrado);
     return;
   }
 }

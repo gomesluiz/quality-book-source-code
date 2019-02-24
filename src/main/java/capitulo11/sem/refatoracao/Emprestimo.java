@@ -1,17 +1,22 @@
 package capitulo11.sem.refatoracao;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Emprestimo {
   private String codigo;
   private Usuario usuario;
   private LocalDate dataDoEmprestimo;
   private LocalDate dataDeDevolucao;
+  private List<Exemplar> exemplares;
 
-  public Emprestimo(String codigo, Usuario usuario) {
+  public Emprestimo(String codigo, Usuario usuario, Exemplar primeiro) {
     this.codigo = codigo;
     this.usuario = usuario;
     this.dataDoEmprestimo = LocalDate.now();
+    this.exemplares = new ArrayList<Exemplar>();
+    this.exemplares.add(primeiro);
 
     switch (usuario.getCategoria()) {
     case FUNCIONARIO:
@@ -29,11 +34,11 @@ public class Emprestimo {
   }
 
   public String getCodigo() {
-    return codigo;
+    return this.codigo;
   }
 
   public Usuario getUsuario() {
-    return usuario;
+    return this.usuario;
   }
 
   public void setUsuario(Usuario usuario) {
@@ -41,16 +46,19 @@ public class Emprestimo {
   }
 
   public LocalDate getDataDoEmprestimo() {
-    return dataDoEmprestimo;
+    return this.dataDoEmprestimo;
   }
 
   public LocalDate getDataDeDevolucao() {
-    return dataDeDevolucao;
+    return this.dataDeDevolucao;
   }
 
   public String getNomeDoUsuario() {
-    // TODO Auto-generated method stub
-    return null;
+    return this.usuario.getNome();
+  }
+  
+  public void registraExemplar(Exemplar exemplar) {
+    this.exemplares.add(exemplar);
   }
 
 }

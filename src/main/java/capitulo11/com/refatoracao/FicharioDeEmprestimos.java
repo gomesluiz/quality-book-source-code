@@ -3,8 +3,8 @@ package capitulo11.com.refatoracao;
 import java.util.List;
 
 /**
- * Um objeto <code>FicharioDeEmprestimos</code> mantém uma coleção de objetos da
- * classe <code>Emprestimo</code>.
+ * Um objeto <code>FicharioDeEmprestimos</code> mantém uma coleção de 
+ * objetos da classe <code>Emprestimo</code>.
  * 
  * @author Luiz Alberto
  * 
@@ -24,7 +24,8 @@ public class FicharioDeEmprestimos {
    * @throws EmprestimoNaoEncontradoException se o emprestimo não for encontrado.
    *
    */
-  public String getNomeDoUsuario(String codigoDoEmprestimo) throws EmprestimoNaoEncontradoException {
+  public String getNomeDoUsuario(String codigoDoEmprestimo) 
+      throws EmprestimoNaoEncontradoException {
     Emprestimo emprestimo = getEmprestimoPeloCodigo(codigoDoEmprestimo);
     return (emprestimo.getNomeDoUsuario());
   }
@@ -39,7 +40,8 @@ public class FicharioDeEmprestimos {
    * @throws EmprestimoNaoEncontradoException se o emprestimo não for encontrado.
    *
    */
-  public void removeUmEmprestimo(String codigoDoEmprestimo) throws EmprestimoNaoEncontradoException {
+  public void removeUmEmprestimo(String codigoDoEmprestimo) 
+      throws EmprestimoNaoEncontradoException {
     emprestimos.remove(getEmprestimoPeloCodigo(codigoDoEmprestimo));
   }
 
@@ -53,9 +55,11 @@ public class FicharioDeEmprestimos {
    * @throws EmprestimoNaoEncontradoException se o empréstimo não for encontrado.
    *
    */
-  private Emprestimo getEmprestimoPeloCodigo(String codigo) throws EmprestimoNaoEncontradoException {
+  private Emprestimo getEmprestimoPeloCodigo(String codigo) 
+      throws EmprestimoNaoEncontradoException {
     for (Emprestimo emprestimo : emprestimos) {
-      if (emprestimo.getCodigo().equals(codigo)) {
+      boolean encontrou = emprestimo.getCodigo().equals(codigo);
+      if (encontrou) {
         return emprestimo;
       }
     }

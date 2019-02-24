@@ -1,52 +1,52 @@
 package capitulo11.com.refatoracao;
 
 /**
- * Um objeto <code>Livro</code> representa as informações e comportamentos
- * aplicaveis a um livro.
+ * Um objeto <code>Livro</code> representa as informações e 
+ * comportamentos aplicaveis a um livro.
  * 
- * @author Luiz Alberto (gomes.luiz@gmail.com)
+ * @author Luiz Alberto
  */
 public class Livro {
   private String isbn;
   private String titulo;
   private String autor;
   private String editora;
+  private double multa;
 
   /**
    * Construtor da classe <code>Exemplar</code>.
    * 
-   * @param numero  O numero do exemplar.
    * @param isbn    O isbn do livro.
    * @param titulo  O título do livro.
    * @param autor   O autor do livro.
    * @param editora A editora do livro.
+   * @param multa   O valor da multa para atraso do livro.
    */
-  public Livro(String isbn, String titulo, String autor, String editora) {
+  public Livro(String isbn, String titulo, String autor
+      , String editora, double multa) {
     this.setIsbn(isbn);
     this.setTitulo(titulo);
     this.setAutor(autor);
     this.setEditora(editora);
-  }
-
-  private void setAutor(String autor2) {
-    // TODO Auto-generated method stub
-
+    this.setMulta(multa);
   }
 
   /**
-   * Atribui o ISBN ao livro. Este método deve ser mantido privado pois o ISBN do
-   * livro é imutável.
+   * Atualizar o isbn do livro. Este método é privado por que 
+   * uma vez que o livro tenha sido criado, o seu ISBN não pode
+   * mais mudar.
    * 
-   * @param isbn O ISBN do livro.
+   * @param isbn
    */
   private void setIsbn(String isbn) {
     this.isbn = isbn;
+    
   }
-
+  
   /**
    * Retorna o ISBN do livro.
    * 
-   * @return O ISBN do livro.
+   * @return o ISBN do livro.
    */
   public String getIsbn() {
     return this.isbn;
@@ -71,6 +71,24 @@ public class Livro {
   }
 
   /**
+   * Atualizar o nome do autor do livro.
+   * 
+   * @param autor O autor do livro.
+   */
+  private void setAutor(String autor) {
+    this.autor = autor;
+  }
+  
+  /**
+   * Retorna o nome do autor do livro.
+   * 
+   * @return O nome do autor do livro.
+   */
+  public String getAutor() {
+    return this.autor;
+  }
+  
+  /**
    * Atualiza a editora do livro.
    * 
    * @param editora A editora do livro.
@@ -88,4 +106,21 @@ public class Livro {
     return this.editora;
   }
 
+  /**
+   * Atualiza a multa de um livro.
+   * 
+   * @param multa O valor da multa
+   */
+  private void setMulta(double multa) {
+    this.multa = multa;
+  }
+
+  /**
+   * Retorna um valor da multa de um livro.
+   * 
+   * @return  O valor da multa.
+   */
+  public double getMulta() {
+    return this.multa;
+  }
 }

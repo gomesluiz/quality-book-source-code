@@ -1,7 +1,9 @@
 
 package capitulo11.com.refatoracao;
 
-import capitulo11.sem.refatoracao.CategoriaDoUsuario;
+import java.time.LocalDate;
+
+import capitulo11.com.refatoracao.CategoriaDoUsuario;
 
 /**
  * Um objeto da classe <code>Usuario</code> armazena informações e fornece
@@ -10,7 +12,7 @@ import capitulo11.sem.refatoracao.CategoriaDoUsuario;
  * @author Luiz Alberto (gomes.luiz@gmail.com)
  *
  */
-public class Usuario {
+public abstract class Usuario {
   private String matricula;
   private String nome;
   private CategoriaDoUsuario categoria;
@@ -20,7 +22,7 @@ public class Usuario {
    * 
    * @param matricula A matrícula do usuário na instituição
    * @param nome      O nome completo do usuário.
-   * @param categoria A categoria do usuário.
+   * @param funcionario A categoria do usuário.
    */
   public Usuario(String matricula, String nome, CategoriaDoUsuario categoria) {
     this.matricula = matricula;
@@ -72,5 +74,14 @@ public class Usuario {
   public void setCategoria(CategoriaDoUsuario categoria) {
     this.categoria = categoria;
   }
+
+  /**
+   * Calcula a data de devolucao de um exemplar.
+   * 
+   * @param dataDoEmprestimo A data do empréstimo do exemplar.
+   * 
+   * @return A data de devolucao do exemplar.
+   */
+  public abstract LocalDate calculaPrazoDeDevolucao(LocalDate dataDoEmprestimo);
 
 }

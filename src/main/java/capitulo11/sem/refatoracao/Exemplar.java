@@ -6,11 +6,12 @@ public class Exemplar {
   private String autor;
   private String isbn;
   private String editora;
-
+  private double multa;
   private boolean estaEmprestado;
   private boolean estaDanificado;
 
-  public Exemplar(int numero, String titulo, String autor, String isbn, String editora) {
+  public Exemplar(int numero, String titulo, String autor
+      , String isbn, String editora, double multa) {
     this.setNumero(numero);
     this.setTitulo(titulo);
     this.setAutor(autor);
@@ -18,10 +19,11 @@ public class Exemplar {
     this.setEditora(editora);
     this.setEmprestado(false);
     this.setDanificado(false);
+    this.setMulta(multa);
   }
 
   public int getNumero() {
-    return numero;
+    return this.numero;
   }
 
   private void setNumero(int numero) {
@@ -29,7 +31,7 @@ public class Exemplar {
   }
 
   public String getTitulo() {
-    return titulo;
+    return this.titulo;
   }
 
   public void setTitulo(String titulo) {
@@ -37,7 +39,7 @@ public class Exemplar {
   }
 
   public String getAutor() {
-    return autor;
+    return this.autor;
   }
 
   public void setAutor(String autor) {
@@ -45,7 +47,7 @@ public class Exemplar {
   }
 
   public String getIsbn() {
-    return isbn;
+    return this.isbn;
   }
 
   public void setIsbn(String isbn) {
@@ -53,27 +55,34 @@ public class Exemplar {
   }
 
   public String getEditora() {
-    return editora;
+    return this.editora;
   }
 
   public void setEditora(String editora) {
     this.editora = editora;
   }
 
-  public boolean isEmprestado() {
-    return estaEmprestado;
+  public boolean estaEmprestado() {
+    return this.estaEmprestado;
   }
 
   public void setEmprestado(boolean estaEmprestado) {
     this.estaEmprestado = estaEmprestado;
   }
 
-  public boolean isDanificado() {
-    return estaDanificado;
+  public boolean estaDanificado() {
+    return this.estaDanificado;
   }
 
   public void setDanificado(boolean estaDanificado) {
     this.estaDanificado = estaDanificado;
+  }
+
+  public double getMulta() {
+    return this.multa;
+  }
+  public void setMulta(double multa) {
+    this.multa = multa;
   }
 
 }
